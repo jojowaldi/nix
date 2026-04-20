@@ -62,6 +62,8 @@ in
       if isLinux then
         (with pkgs; [
           release-plz
+          esp-generate
+          espup
           kdePackages.qtdeclarative
         ])
       else

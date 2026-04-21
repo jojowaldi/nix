@@ -85,6 +85,11 @@ in
       default = "";
       description = "Hyprland greeter monitor configuration";
     };
+    hyprlandHiDpiFix = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Whether to apply the HiDPI fix for Hyprland";
+    };
   };
 
   # Used for home-manager configuration and is automatically set in user profiles. DO NOT set manually.

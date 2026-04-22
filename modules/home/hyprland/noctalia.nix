@@ -92,11 +92,14 @@
       ", XF86AudioPlay, exec, $ipc media playPause"
       ", XF86AudioPause, exec, $pic media pause"
     ];
+
+    exec-once = [
+      "noctalia-shell"
+    ];
   };
 
   programs.noctalia-shell = {
     enable = true;
-    systemd.enable = true;
     package = pkgs.noctalia-shell;
 
     colors = {

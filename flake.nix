@@ -9,7 +9,6 @@
       "https://projects.cache.profidev.io"
       "https://hyprland.cachix.org"
       "https://vicinae.cachix.org"
-      "http://192.168.178.22:5000"
     ];
     extra-trusted-public-keys = [
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="

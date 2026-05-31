@@ -1,5 +1,6 @@
 { pkgs, ... }:
 
+# Todo: change to AMD
 {
   hardware.graphics = {
     enable = true;

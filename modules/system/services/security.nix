@@ -58,50 +58,7 @@
 
   users.groups.ha_power = { };
 
-  security.sudo.extraRules = [
-    # Allow execution of cosmic-randr as sddm by ha_power without sudo password
-    {
-      users = [ "ha_power" ];
-      runAs = "sddm,profidev";
-      commands = [
-        {
-          command = "/run/current-system/sw/bin/cosmic-randr";
-          options = [
-            "NOPASSWD"
-            "SETENV"
-          ];
-        }
-      ];
-    }
-    # Allow execution of wlr-randr as sddm by ha_power without sudo password
-    {
-      users = [ "ha_power" ];
-      runAs = "sddm,profidev";
-      commands = [
-        {
-          command = "/run/current-system/sw/bin/wlr-randr";
-          options = [
-            "NOPASSWD"
-            "SETENV"
-          ];
-        }
-      ];
-    }
-    # Allow execution of wlopm as sddm by ha_power without sudo password
-    {
-      users = [ "ha_power" ];
-      runAs = "sddm,profidev";
-      commands = [
-        {
-          command = "/run/current-system/sw/bin/wlopm";
-          options = [
-            "NOPASSWD"
-            "SETENV"
-          ];
-        }
-      ];
-    }
-  ];
+  
 
   environment.systemPackages = with pkgs; [
     wlopm

@@ -31,7 +31,7 @@
     };
 
     profileIcons = {
-      profidev = ../../../assets/images/profidev.jpeg;
+      jojowaldi = ../../../assets/images/profidev.jpeg;
     };
   };
 

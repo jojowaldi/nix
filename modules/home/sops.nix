@@ -7,7 +7,7 @@
 }:
 
 let
-  sopsFolder = (toString inputs.nix-secrets) + "/sops";
+  sopsFolder = (toString inputs.nix-secretes) + "/sops";
   homeDirectory = config.home.homeDirectory;
   generalKeys = [ ];
   userSpec = config.userSpec;

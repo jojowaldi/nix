@@ -7,7 +7,7 @@
 }:
 
 let
-  sopsFolder = toString inputs.nix-secrets + "/sops";
+  sopsFolder = toString inputs.nix-secretes + "/sops";
   platform = if isLinux then "nixos" else "darwin";
   platformModules = "${platform}Modules";
 

@@ -15,7 +15,7 @@ persist_dir=""
 luks_passphrase="1234"
 luks_secondary_drive_labels=""
 git_root=$(git rev-parse --show-toplevel)
-nix_secrets_dir=${NIX_SECRETS_DIR:-"${git_root}"/../nix-secrets}
+nix_secrets_dir=${NIX_SECRETS_DIR:-"${git_root}"/../nix-secretes}
 
 # Create a temp directory for generated host keys
 temp=$(mktemp -d)
@@ -219,7 +219,7 @@ function sops_generate_host_age_key() {
 		exit 1
 	fi
 
-	green "Updating nix-secrets/.sops.yaml"
+	green "Updating nix-secretes/.sops.yaml"
 	sops_update_age_key "hosts" "$target_hostname" "$host_age_key"
 }
 
@@ -283,7 +283,7 @@ if yes_or_no "Do you want to copy your full nix-config and nix-secrets to $targe
 	$ssh_cmd "sudo chown -R $target_user /etc/nixos"
 	green "Copying full nix-config to $target_hostname"
 	sync "$target_user" "${git_root}"/../nix-config
-	green "Copying full nix-secrets to $target_hostname"
+	green "Copying full nix-secretes to $target_hostname"
 	sync "$target_user" "${nix_secrets_dir}"
 
 	# FIXME(bootstrap): Add some sort of key access from the target to download the config (if it's a cloud system)

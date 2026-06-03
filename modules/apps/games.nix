@@ -11,7 +11,6 @@
     #lutris
     r2modman
     playonlinux
-    r2modman
     wine
     wine64
     winetricks

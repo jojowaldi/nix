@@ -7,7 +7,7 @@
 }:
 
 let
-  sopsFolder = toString inputs.nix-secrets + "/sops";
+  sopsFolder = toString inputs.nix-secretes + "/sops";
   platform = if isLinux then "nixos" else "darwin";
   platformModules = "${platform}Modules";
 
@@ -53,33 +53,9 @@ in
             neededForUsers = true;
           };
         }
-        // (
-          if isLinux then
-            {
-              "yubikey/login/${config.hostSpec.hostname}/${spec.secrets_user}" = lib.mkIf (spec.use_yubikey) {
-                owner = config.users.users.${spec.username}.name;
-                #inherit (config.users.users.${spec.username}) group;
-
-                sopsFile = "${sopsFolder}/shared.yaml";
-                path = "${home spec}/.config/Yubico/u2f_keys";
-              };
-            }
-          else
-            { }
-        )
       )
       {
-        "store_key/private" = {
-          sopsFile = "${sopsFolder}/shared.yaml";
-          owner = "root";
-          group = "wheel";
-        };
-
-        "store_key/public" = {
-          sopsFile = "${sopsFolder}/shared.yaml";
-          owner = "root";
-          group = "wheel";
-        };
+        
       }
       config.hostSpec.users;
 
@@ -90,11 +66,9 @@ in
       "sopsSetAgeKeyOwnership_${spec.username}" =
         let
           ageFolder = "${home spec}/.config/sops/age";
-          keyFolder = "${home spec}/.config/Yubico";
         in
         ''
           mkdir -p ${ageFolder} || true
-          mkdir -p ${keyFolder} || true
         '';
     }
   ) { } config.hostSpec.users;

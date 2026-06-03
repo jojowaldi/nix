@@ -4,10 +4,9 @@
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      intel-media-driver
-      intel-ocl
-      intel-vaapi-driver
-      vpl-gpu-rt
+      mesa
+      vulkan-radeon
+      libva-mesa-driver
     ];
   };
 }

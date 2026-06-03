@@ -21,6 +21,7 @@
     "ahci"
     "sd_mod"
     "sr_mod"
+    "usb_storage"
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [

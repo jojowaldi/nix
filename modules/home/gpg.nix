@@ -17,7 +17,7 @@
   };
 
   services.gpg-agent = {
-    enable = true;
+    enable = false;
 
     extraConfig = ''
       allow-loopback-pinentry

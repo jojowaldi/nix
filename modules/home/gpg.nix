@@ -2,7 +2,7 @@
 
 {
   programs.gpg = {
-    enable = true;
+    enable = false;
 
     publicKeys = [
       {

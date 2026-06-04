@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    alacritty
+    alacritty-graphics
   ];
 
   programs.fish.enable = true;

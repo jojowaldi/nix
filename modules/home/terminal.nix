@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.vscode = {
@@ -7,6 +7,7 @@
 
   programs.alacritty = {
     enable = true;
+    package = pkgs.alacritty-graphics;
     settings = {
       window.dimensions = {
         columns = 130;

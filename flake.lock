@@ -1267,10 +1267,10 @@
     },
     "nix-secrets": {
       "locked": {
-        "lastModified": 1778614395,
-        "narHash": "sha256-IzMy+XC5WbNq1lTfOFqOQPOTOYc/jifIrR9DLG9qdHY=",
+        "lastModified": 1780310418,
+        "narHash": "sha256-BT/MNvHLF1Rbx9U6uLyV5uHgzyb+kizyjzriLz6ZjxE=",
         "ref": "main",
-        "rev": "0adeb3dbfb6ca1581339a5ba16aa9129d9080176",
+        "rev": "3690ab99872b8f3ef6cf9176cef94a3d036fb701",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/ProfiiDev/nix-secrets.git"
@@ -1722,7 +1722,9 @@
         "proton": "proton",
         "rust-overlay": "rust-overlay_4",
         "silentSDDM": "silentSDDM",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "yazi-plugins": "yazi-plugins",
+        "yazi-starship": "yazi-starship"
       }
     },
     "rust-analyzer-src": {
@@ -2223,6 +2225,38 @@
       "original": {
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
+        "type": "github"
+      }
+    },
+    "yazi-plugins": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1780203849,
+        "narHash": "sha256-bqGN6JxbU+/o7TlM/Cm9Qj/s1McA4pB5QWArGZPcme4=",
+        "owner": "yazi-rs",
+        "repo": "plugins",
+        "rev": "598cdb671401574ac27aeee257e2f3b0c80610a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yazi-rs",
+        "repo": "plugins",
+        "type": "github"
+      }
+    },
+    "yazi-starship": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1774193213,
+        "narHash": "sha256-CPRVJVunBLwFLCoj+XfoIIwrrwHxqoElbskCXZgFraw=",
+        "owner": "Rolv-Apneseth",
+        "repo": "starship.yazi",
+        "rev": "a83710153ab5625a64ef98d55e6ddad480a3756f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rolv-Apneseth",
+        "repo": "starship.yazi",
         "type": "github"
       }
     }

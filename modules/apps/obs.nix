@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ obs-studio ];
+  environment.systemPackages = with pkgs; [
+    obs-studio
+    kdePackages.kdenlive
+  ];
 }

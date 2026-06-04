@@ -90,6 +90,16 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    yazi-plugins = {
+      url = "github:yazi-rs/plugins";
+      flake = false;
+    };
+
+    yazi-starship = {
+      url = "github:Rolv-Apneseth/starship.yazi";
+      flake = false;
+    };
   };
 
   outputs =

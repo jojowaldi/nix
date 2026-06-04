@@ -32,32 +32,6 @@
     };
   };
 
-  security.polkit.extraConfig = ''
-    polkit.addRule(function (action, subject) {
-      if (
-        (action.id == "org.freedesktop.login1.reboot" ||
-         action.id == "org.freedesktop.login1.power-off" ||
-         action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
-         action.id == "org.freedesktop.login1.power-off-multiple-sessions") &&
-        (subject.user == "ha_power")
-      ) {
-        return polkit.Result.YES;
-      }
-    });
-  '';
-
-  users.users.ha_power = {
-    isNormalUser = true;
-    createHome = lib.mkForce false;
-    group = "ha_power";
-    home = "/var/empty";
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKFTMajOlMBaHKWMnYsSyHRO0gC2BczCsIhlzwH3EFdP root@a0d7b954-ssh"
-    ];
-  };
-
-  users.groups.ha_power = { };
-
   
 
   environment.systemPackages = with pkgs; [

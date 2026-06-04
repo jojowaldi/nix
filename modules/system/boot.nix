@@ -16,6 +16,9 @@
   boot.lanzaboote = {
     enable = true;
     pkiBundle = "/var/lib/sbctl";
+    autoGenerateKeys.enable = true;
+    autoEnrollKeys.enable = true;
+    autoEnrollKeys.autoReboot = true;
   };
 
   boot.plymouth.enable = true;

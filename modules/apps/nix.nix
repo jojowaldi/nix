@@ -70,7 +70,6 @@ in
       "https://nix-citizen.cachix.org"
       "https://projects.cache.profidev.io"
       "https://hyprland.cachix.org"
-      "http://192.168.178.22:5000"
     ];
     trusted-public-keys = [
       "hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs="

@@ -38,23 +38,4 @@ in
 
     keyring-unlocker
   ];
-
-  systemd.user.services.unlock-keyring = {
-    Unit = {
-      Description = "Unlocks Keyring";
-      BindsTo = "gnome-session.target";
-    };
-
-    Service = {
-      Type = "oneshot";
-      EnvironmentFile = "${config.sops.templates."yubikey_pin".path}";
-      ExecStart = "${keyring-unlocker}/bin/unlock_keyrings.sh ${
-        config.sops.secrets."keyring_keys/${config.userSpec.username}".path
-      } \${PIN}";
-    };
-
-    Install = {
-      WantedBy = [ "gnome-session.target" ];
-    };
-  };
 }

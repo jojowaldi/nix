@@ -1769,11 +1769,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780180566,
-        "narHash": "sha256-tfXlfIFWY+E/izmRb9Qd3to3guxhyIh9HyZAoTKqa9k=",
+        "lastModified": 1780758567,
+        "narHash": "sha256-3guWRbX1CgSU6hltf//lrru7fSHKZIIw0zIMFM2jmvY=",
         "owner": "uiriansan",
         "repo": "SilentSDDM",
-        "rev": "0828621769acaa26ef131ed96255c7bd06038111",
+        "rev": "9ccebeb6b526eee779b0807fe85b813d47d78ff7",
         "type": "github"
       },
       "original": {

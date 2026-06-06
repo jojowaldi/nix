@@ -8,8 +8,8 @@
     hunspellDicts.en_US
     hunspellDicts.de_DE
     freerdp
-    #texliveFull
-    #tex-fmt
+    texliveFull
+    tex-fmt
     beamerpresenter
     affinity-v3
     rnote

@@ -4,12 +4,6 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-
-    initExtra = ''
-      if [[ $- == *i* ]]; then
-        exec fish
-      fi
-    '';
   };
 
   programs.zsh = {

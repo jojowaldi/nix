@@ -35,7 +35,7 @@
 
   virtualisation.virtualbox = {
     host = {
-      enable = false;
+      enable = true;
       enableExtensionPack = true;
       package = pkgsUnstableNoCuda.virtualbox;
     };

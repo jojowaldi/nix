@@ -29,6 +29,8 @@ in
       // {
         "${spec.username}" = {
           openssh.authorizedKeys.keys = lib.lists.forEach pubKeys (key: builtins.readFile key);
+
+          shell = pkgs.fish;
         }
         // (
           if isLinux then
@@ -63,7 +65,6 @@ in
           else
             {
               home = "/Users/${spec.username}";
-              shell = pkgs.fish;
             }
         );
       }

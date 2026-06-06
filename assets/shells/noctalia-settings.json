@@ -224,13 +224,8 @@
           "textColor": "none"
         },
         {
-          "deviceNativePath": "__default__",
-          "displayMode": "graphic",
-          "hideIfIdle": false,
-          "hideIfNotDetected": true,
-          "id": "Battery",
-          "showNoctaliaPerformance": false,
-          "showPowerProfiles": true
+          "defaultSettings": {},
+          "id": "plugin:battery-monitor-plus"
         },
         {
           "hideWhenZero": false,

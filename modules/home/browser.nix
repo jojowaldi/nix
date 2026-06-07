@@ -1,7 +1,7 @@
 { pkgs, pkgsUnstableNoCuda, ... }:
 
 let
-  browser = [ "brave-browser.desktop" ];
+  browser = [ "google-chrome.desktop" ];
   editor = [ "nvim.desktop" ];
   media = [ "vlc.desktop" ];
   terminal = [ "alacritty.desktop" ];
@@ -76,6 +76,6 @@ in
   };
 
   home.sessionVariables = {
-    DEFAULT_BROWSER = "${pkgs.brave}/bin/brave";
+    DEFAULT_BROWSER = "${pkgs.google-chrome}/bin/google-chrome";
   };
 }

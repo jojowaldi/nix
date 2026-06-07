@@ -5,6 +5,7 @@ let
   editor = [ "nvim.desktop" ];
   media = [ "vlc.desktop" ];
   terminal = [ "alacritty.desktop" ];
+  imageViewer = [ "nomacs.desktop" ];
 
   associations = {
     "text/*" = editor;
@@ -47,9 +48,16 @@ let
     "x-scheme-handler/https" = browser;
     "x-scheme-handler/terminal" = terminal;
 
+    "image/jpeg" = imageViewer;
+    "image/png" = imageViewer;
+    "image/gif" = imageViewer;
+    "image/webp" = imageViewer;
+    "image/svg+xml" = imageViewer;
+    "image/arw" = imageViewer;
+
     "audio/*" = media;
     "video/*" = media;
-    "image/*" = browser;
+    "image/*" = imageViewer;
 
     "application/vnd.jgraph.mxfile" = [ "drawio.desktop" ];
     "application/vnd.jgraph.mxfile.realtime" = [ "drawio.desktop" ];

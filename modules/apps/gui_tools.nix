@@ -21,6 +21,7 @@
       obsidian
       xkill
       qjournalctl
+      nomacs
     ]
     ++ lib.optionals isLinux [
       deskflow

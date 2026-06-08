@@ -6,13 +6,13 @@
     [
       jetbrains-toolbox
       zed-editor
-      jetbrains.rider
-      jetbrains.idea
+      #jetbrains.rider
+      #jetbrains.idea
     ]
     ++ (
       if isLinux then
         [
-          antigravity
+          #antigravity
           android-studio
         ]
       else

@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    teams-for-linux
+    #teams-for-linux
     libreoffice-qt
     hunspell
     hunspellDicts.en_US
@@ -10,7 +10,7 @@
     freerdp
     texliveFull
     tex-fmt
-    beamerpresenter
+    #beamerpresenter
     affinity-v3
     rnote
     wayscriber

@@ -14,6 +14,8 @@
         [
           #antigravity
           android-studio
+          code-cursor
+          cursor-cli
         ]
       else
         [ ]

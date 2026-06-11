@@ -28,11 +28,11 @@
     "kvm-amd"
     "ec-sys"
   ];
-  #boot.resumeDevice = "/dev/disk/by-id/nvme-INTENSO_SSD_1642408002002208";
+  boot.resumeDevice = "/dev/disk/by-id/nvme-INTENSO_SSD_1642408002002208";
   boot.kernelParams = [
     "mem_sleep_default=deep"
     "acpi_sleep=nonvs"
-  #  "resume_offset=269568"
+    "resume_offset=533760"
   ];
   hardware.cpu.amd.updateMicrocode = true;
 

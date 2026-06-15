@@ -7,7 +7,7 @@
       _module.args = {
         disk = "/dev/disk/by-id/nvme-INTENSO_SSD_1642408002002208";
         withSwap = true;
-        swapSize = "8";
+        swapSize = "32";
       };
     }
   ];

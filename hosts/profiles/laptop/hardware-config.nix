@@ -32,7 +32,8 @@
   boot.kernelParams = [
     "mem_sleep_default=deep"
     "acpi_sleep=nonvs"
-    "resume_offset=533760"
+    "resume_offset=23911646"
+    "resume=/dev/disk/by-id/nvme-INTENSO_SSD_1642408002002208"
   ];
   hardware.cpu.amd.updateMicrocode = true;
 

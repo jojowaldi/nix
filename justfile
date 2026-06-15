@@ -135,3 +135,6 @@ sops-add-creation-rules USER HOST:
 
 noctalia:
   noctalia-shell ipc call state all | jq .settings > {{pwd}}/assets/shells/noctalia-settings.json
+
+repl:
+  nix repl --expr "builtins.getFlake \"$PWD\""

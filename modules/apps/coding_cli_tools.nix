@@ -39,7 +39,7 @@ in
       terraform
       minikube
       k9s
-      #wrapped-azure-cli
+      wrapped-azure-cli
       wrapped-helmfile
       wrapped-kubernetes-helm
       kubectl

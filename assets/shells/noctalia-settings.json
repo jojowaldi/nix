@@ -35,7 +35,7 @@
           "icon": "rocket",
           "iconColor": "none",
           "id": "Launcher",
-          "useDistroLogo": true
+          "useDistroLogo": false
         },
         {
           "characterCount": 2,
@@ -419,7 +419,7 @@
     "enableClipboardChips": true,
     "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
     "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
-    "position": "center",
+    "position": "top_left",
     "pinnedApps": [],
     "sortByMostUsed": true,
     "terminalCommand": "alacritty -e",

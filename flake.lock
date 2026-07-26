@@ -202,11 +202,11 @@
         "wayscriber": "wayscriber"
       },
       "locked": {
-        "lastModified": 1784550704,
-        "narHash": "sha256-HWnnTeTVvbemiTyF6FRYvnNKnbZYIlYcpIS87fi/qbQ=",
+        "lastModified": 1785090175,
+        "narHash": "sha256-imhugDf8cQ8sQbpyKpwpMQkXNVr5RjbqbW2F/e9AcvQ=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "22332183959ffaad491965a713cb9871867a5a8a",
+        "rev": "202450cc3ad4f4f28b3e2b30b5939caca3bd47ea",
         "type": "github"
       },
       "original": {
@@ -1323,11 +1323,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784516845,
-        "narHash": "sha256-OZ3HkWGfdJOeAMmzU8qyX6KkyFxrzjA7Jz/4Rk4melM=",
+        "lastModified": 1785086961,
+        "narHash": "sha256-H4VdxGrDN8sdircWHOKPwsuxCHiWCnHWqJ70x36CJ0Q=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "c589fd3474483e4da1af9214ab9103ee3cbab6f9",
+        "rev": "a8f6a5e7f8765b19c4ead2195d12b4aed4bc03db",
         "type": "github"
       },
       "original": {

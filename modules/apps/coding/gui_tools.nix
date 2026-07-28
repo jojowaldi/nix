@@ -8,6 +8,6 @@
     dbeaver-bin
     postman
     insomnia
-    #wireshark
+    wireshark
   ];
 }

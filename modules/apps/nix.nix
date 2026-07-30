@@ -45,6 +45,7 @@ in
     nixd
     nixfmt
     mcp-nixos
+    nix-init
   ];
 
   system.extraDependencies =

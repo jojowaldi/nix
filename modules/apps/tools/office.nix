@@ -7,5 +7,6 @@
     beamerpresenter
     wayscriber
     wayscriber-configurator
+    openslides
   ];
 }

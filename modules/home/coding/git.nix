@@ -6,6 +6,16 @@
     delta
   ];
 
+  programs.gh = {
+    enable = true;
+    extensions = with pkgs; [
+      gh-skyline
+      gh-stack
+      gh-classroom
+      gh-webhook
+    ];
+  };
+
   programs.git = {
     enable = true;
 

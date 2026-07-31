@@ -31,7 +31,6 @@ in
       gobject-introspection
       #wrapped-azure-cli
       devenv
-      gh
       espflash
       stackit-cli
       awscli2

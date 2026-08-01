@@ -28,6 +28,7 @@ in
     #./noctalia.nix
     ./vicinae.nix
     ./wallpaper.nix
+    ./positron.nix
   ];
 
   home.packages = with pkgs; [

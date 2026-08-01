@@ -22,6 +22,7 @@
     custom-nixpkgs.url = "github:ProfiiDev/custom-nixpkgs";
 
     proton.url = "github:profiidev/proton/latest";
+    positron.url = "github:profiidev/positron/latest";
     hibernation.url = "github:profiidev/hibernation/latest";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-secrets.url = "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=main&shallow=1";

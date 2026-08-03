@@ -9,8 +9,8 @@
     enable = true;
 
     theme = {
-      package = pkgs.ayu-dark-gtk;
-      name = "Ayu-Dark";
+      package = pkgs.colloid-gtk-theme;
+      name = "Colloid-Dark";
     };
 
     iconTheme = {

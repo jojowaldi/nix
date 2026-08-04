@@ -121,7 +121,6 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1", "
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
     box_height = 70.0
@@ -141,7 +140,6 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1", "
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 70.0
@@ -161,7 +159,6 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1", "
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = true
 
 [notification]
 layer = "overlay"
@@ -309,6 +306,7 @@ scale = 1.05
 
 [widget.cpu]
 show_label = false
+show_value = false
 
 [widget.launcher]
 capsule = true
@@ -330,9 +328,11 @@ show_label = false
 
 [widget.network_rx]
 show_label = false
+show_value = false
 
 [widget.network_tx]
 show_label = false
+show_value = false
 
 [widget.nix-monitor]
 capsule = true
@@ -354,6 +354,7 @@ scale = 1.05
 
 [widget.ram]
 show_label = false
+show_value = false
 
 [widget.status]
 capsule = true
@@ -363,7 +364,7 @@ type = "pozzoo/hassio:status"
 
 [widget.sysmon]
 capsule = true
-show_label = false
+show_value = false
 stat = "disk_pct"
 
 [widget.taskbar]
@@ -375,6 +376,7 @@ hide_empty_workspaces = true
 
 [widget.temp]
 show_label = false
+show_value = false
 
 [widget.tray]
 capsule = true

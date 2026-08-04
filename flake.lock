@@ -174,11 +174,11 @@
         "wayscriber": "wayscriber"
       },
       "locked": {
-        "lastModified": 1785745293,
-        "narHash": "sha256-Sh7CdLAzEPnzjTXVSvInTSR9qWwEDTm1TljdeFHoGUY=",
+        "lastModified": 1785834861,
+        "narHash": "sha256-CfWX+bajVb3yC4WPJ7y6PSupqtg2K0PCtbVarztU3a8=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "3d477825d1aade9d080cce23cf7f6c1da9a2f494",
+        "rev": "3015f1937b011a045f2a483094c0880b368543c4",
         "type": "github"
       },
       "original": {

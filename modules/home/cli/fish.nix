@@ -55,6 +55,8 @@
       cr = "cargo run";
       cbr = "cargo build --release";
       crr = "cargo run --release";
+      entity-gen = "sea-orm-cli generate entity -o entity/src/entities --entity-format dense --with-serde both";
+      migrate-gen = "sea-orm-cli migrate generate";
       rmf = "rm -rf";
       dco = "docker compose up";
       clr = "clear";

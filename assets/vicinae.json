@@ -2,20 +2,13 @@
   "$schema": "https://vicinae.com/schemas/config.json",
   "close_on_focus_loss": true,
   "pop_to_root_on_close": true,
-  "font": {
-    "rendering": "qt",
-    "normal": {}
-  },
   "theme": {
     "light": {
-      "name": "ayu-light"
-    },
-    "dark": {
       "name": "ayu-dark"
     }
   },
   "providers": {
-    "@knoopx/nix-0": {
+    "@knoopx/vicinae-extension-nix-0": {
       "entrypoints": {
         "home-manager-options": {
           "alias": "h"
@@ -28,7 +21,7 @@
         }
       }
     },
-    "@mattisssa/spotify-player-vicinae-extension-0": {
+    "@mattisssa/spotify-player-vicinae-extension": {
       "entrypoints": {
         "findLyrics": {
           "enabled": false
@@ -38,7 +31,7 @@
         }
       }
     },
-    "@mblode/google-vicinae-extension-0": {
+    "@mblode/google-vicinae-extension": {
       "entrypoints": {
         "index": {
           "alias": "g"
@@ -47,7 +40,11 @@
     },
     "@tonka3000/home-assistant-vicinae-extension": {
       "preferences": {
-        "instance": "https://ha.profidev.io"
+        "camerarefreshinterval": "3000",
+        "ignorecerts": false,
+        "instance": "https://ha.profidev.io",
+        "showEntityId": false,
+        "usePing": true
       }
     },
     "calculator": {

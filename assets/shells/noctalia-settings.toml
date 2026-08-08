@@ -13,6 +13,7 @@ order = [ "default" ]
         "group:g1",
         "widget",
         "nix-monitor",
+        "bar",
         "status",
         "bluetooth",
         "network",
@@ -177,9 +178,15 @@ position_vertical = "bottom_center"
 hide_clean_button = true
 hide_update_button = true
 
+[plugin_settings."icefish/phone-connect"]
+details_floating_open_near_click = true
+details_floating_placement = "attached"
+details_widget_placement = "attached"
+
 [plugin_settings."pozzoo/hassio"]
 entity_manager_open_near_click = true
 entity_manager_placement = "attached"
+ha_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI0NTE3NjIwNGM0ZWE0MWNjOTgxNWY2NDNlYzc3NjgxZCIsImlhdCI6MTc4NDQ3NzIzNiwiZXhwIjoyMDk5ODM3MjM2fQ.e8XaMzvBa9XAXqVaoPi0LGxG8l1VUu-G8aRwTbyNxx0"
 ha_url = "https://ha.profidev.io"
 shortcut_entity_1 = "button.wake_on_lan_a8_a1_59_ad_3b_3b"
 shortcut_entity_2 = "input_button.benjamin_pc_aus"
@@ -189,7 +196,7 @@ panel_open_near_click = true
 panel_placement = "attached"
 
 [plugins]
-enabled = [ "pozzoo/hassio", "avivbintangaringga/nix-monitor", "profidev/hypr-screen-mirror" ]
+enabled = [ "pozzoo/hassio", "avivbintangaringga/nix-monitor", "profidev/hypr-screen-mirror", "icefish/phone-connect" ]
 
 [shell]
 avatar_path = "/nix/store/d1ys2ri119q9pw4nl4gc8iv9ayx2y209-profidev.jpeg"
@@ -282,6 +289,12 @@ capsule = true
 icon_size = 18
 max_length = 145
 title_scroll = "on_hover"
+
+[widget.bar]
+capsule = true
+capsule_padding = 4
+scale = 1.05
+type = "icefish/phone-connect:bar"
 
 [widget.battery]
 capsule = true

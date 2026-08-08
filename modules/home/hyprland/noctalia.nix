@@ -15,6 +15,7 @@
     adw-gtk3
     nwg-look
     glib
+    sshfs
   ];
 
   gtk = {

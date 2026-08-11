@@ -15,6 +15,7 @@ order = [ "default" ]
         "nix-monitor",
         "bar",
         "status",
+        "status_2",
         "bluetooth",
         "network",
         "volume",
@@ -178,6 +179,9 @@ position_vertical = "bottom_center"
 hide_clean_button = true
 hide_update_button = true
 
+[plugin_settings."davemhammer/tailscale"]
+manager_placement = "attached"
+
 [plugin_settings."icefish/phone-connect"]
 details_floating_open_near_click = true
 details_floating_placement = "attached"
@@ -196,7 +200,13 @@ panel_open_near_click = true
 panel_placement = "attached"
 
 [plugins]
-enabled = [ "pozzoo/hassio", "avivbintangaringga/nix-monitor", "profidev/hypr-screen-mirror", "icefish/phone-connect" ]
+enabled = [
+    "pozzoo/hassio",
+    "avivbintangaringga/nix-monitor",
+    "profidev/hypr-screen-mirror",
+    "icefish/phone-connect",
+    "davemhammer/tailscale"
+]
 
 [shell]
 avatar_path = "/nix/store/d1ys2ri119q9pw4nl4gc8iv9ayx2y209-profidev.jpeg"
@@ -374,6 +384,13 @@ capsule = true
 capsule_padding = 4
 scale = 1.05
 type = "pozzoo/hassio:status"
+
+[widget.status_2]
+capsule = true
+capsule_padding = 4
+scale = 1.05
+show_counts = false
+type = "davemhammer/tailscale:status"
 
 [widget.sysmon]
 capsule = true

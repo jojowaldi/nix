@@ -6,6 +6,7 @@
     services.core.bluetooth
     services.core.btrfs
     services.core.gpg
+    services.core.keyring
     services.core.security
     services.core.time
 

@@ -31,7 +31,7 @@
     };
 
     profileIcons = {
-      profidev = ../../../assets/images/profidev.jpeg;
+      jojowaldi = ../../../assets/images/profilepicture.png;
     };
   };
 
@@ -55,13 +55,5 @@
   environment.variables = {
     XCURSOR_SIZE = "24";
     XCURSOR_THEME = "Bibata-Modern-Ice";
-  };
-
-  home-manager.users.sddm = {
-    home.stateVersion = "26.05";
-
-    home.packages = with pkgs; [
-      bibata-cursors
-    ];
   };
 }

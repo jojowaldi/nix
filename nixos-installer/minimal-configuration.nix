@@ -19,7 +19,7 @@
   hostSpec = {
     isMinimal = lib.mkForce true;
     hostname = "installer";
-    users = [ { username = "profidev"; } ];
+    users = [ { username = "jojowaldi"; } ];
   };
 
   fileSystems."/boot".options = [ "umask=0077" ]; # Removes permissions and security warnings.
@@ -94,10 +94,10 @@
   users.users.sddm = {
     isSystemUser = true;
     group = "sddm";
+
   };
   users.groups.sddm = { };
 
   system.stateVersion = "26.05";
-  home-manager.users.sddm.home.stateVersion = "26.05";
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }

@@ -6,11 +6,15 @@
     [
       jetbrains-toolbox
       zed-editor
+
     ]
     ++ (
       if isLinux then
         [
+
           android-studio
+          code-cursor
+          cursor-cli
         ]
       else
         [ ]

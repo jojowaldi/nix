@@ -56,10 +56,6 @@
 
   hostSpec.hyprlandMonitorConfig = builtins.readFile ./monitors.lua;
 
-  home-manager.users.sddm = {
-    home.file.".config/kwinoutputconfig.json".source = ./kwinoutputconfig.json;
-  };
-
   services.tailscale = {
     useRoutingFeatures = "both";
     extraSetFlags = [

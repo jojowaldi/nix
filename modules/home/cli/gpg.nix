@@ -2,7 +2,7 @@
 
 {
   programs.gpg = {
-    enable = true;
+    enable = false;
 
     publicKeys = [
       {
@@ -17,7 +17,7 @@
   };
 
   services.gpg-agent = {
-    enable = true;
+    enable = false;
 
     extraConfig = ''
       allow-loopback-pinentry

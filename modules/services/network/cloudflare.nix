@@ -2,6 +2,6 @@
 
 {
   services.cloudflare-warp = {
-    enable = true;
+    enable = false;
   };
 }

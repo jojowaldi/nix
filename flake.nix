@@ -6,6 +6,8 @@
       "https://nix-community.cachix.org"
       "https://projects.cache.profidev.io"
       "http://192.168.178.22:80"
+      "https://hyprland.cachix.org"
+      "https://vicinae.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -25,7 +27,7 @@
     positron.url = "github:profiidev/positron/latest";
     hibernation.url = "github:profiidev/hibernation/latest";
     nix-gaming.url = "github:fufexan/nix-gaming";
-    nix-secrets.url = "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=main&shallow=1";
+    nix-secrets.url = "git+ssh://git@github.com/jojowaldi/nix-secretes.git?ref=main&shallow=1";
     flake-utils.url = "github:numtide/flake-utils";
     flake-parts.url = "github:hercules-ci/flake-parts";
 

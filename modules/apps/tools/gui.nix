@@ -14,6 +14,8 @@
       xkill
       zathura
       rpi-imager
+      qjournalctl
+      nomacs
     ]
     ++ lib.optionals isLinux [
       wl-clipboard

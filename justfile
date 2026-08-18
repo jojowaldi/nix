@@ -1,5 +1,5 @@
 pwd := source_dir()
-SOPS_FILE := "../nix-secrets/.sops.yaml"
+SOPS_FILE := "../nix-secretes/.sops.yaml"
 
 # Define path to helpers
 export HELPERS_PATH := justfile_directory() + "/scripts/helpers.sh"
@@ -56,7 +56,7 @@ check-sops:
 
 # Update nix-secrets flake
 update-nix-secrets:
-  @(cd ../nix-secrets && git fetch && git rebase > /dev/null) || true
+  @(cd ../nix-secretes && git fetch && git rebase > /dev/null) || true
   nix flake update nix-secrets --timeout 5
 
 install-remote HOST USER IP KEY:
@@ -92,13 +92,13 @@ build-host HOST:
 
 # Called by the rekey recipe
 sops-rekey:
-  cd ../nix-secrets && for file in $(ls sops/*.yaml); do \
+  cd ../nix-secretes && for file in $(ls sops/*.yaml); do \
     sops updatekeys -y $file; \
   done
 
 # Update all keys in sops/*.yaml files in nix-secrets to match the creation rules keys
 rekey: sops-rekey
-  cd ../nix-secrets && \
+  cd ../nix-secretes && \
     (pre-commit run --all-files || true) && \
     git add -u && (git commit -nm "chore: rekey" || true) && git push
 

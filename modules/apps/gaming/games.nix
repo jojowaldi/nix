@@ -9,6 +9,7 @@
     heroic
     #lutris
     r2modman
+    playonlinux
     wine
     winetricks
     gamemode

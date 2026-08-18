@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    comfy-desktop
+  ];
+
   services.ollama = {
     enable = true;
     package = pkgs.ollama-cuda;

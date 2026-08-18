@@ -33,13 +33,34 @@ let
     [ -r "$PW_FILE" ] || exit 0
     PW="$(cat "$PW_FILE")"
 
-    # ExecStartPost runs as soon as the daemon is forked, not when it owns the name
+    # gnome-keyring ships its own D-Bus activation file for org.freedesktop.secrets
+    # (plain "--start", no password) plus XDG autostart entries that launch the
+    # same. Any query against the name while it's still unowned - even our own
+    # get-property poll below - makes D-Bus activate THAT one, and it wins the
+    # name outright: our --unlock daemon (started a moment earlier by ExecStart)
+    # is left running but nameless, "another secret service is running".
+    # GetConnectionUnixProcessID asks the bus about a name rather than calling
+    # the name itself, so it can't trigger that activation - safe to poll with.
+    us="$(systemctl --user show gnome-keyring-autounlock.service -p MainPID --value)"
+    owner=""
     for _ in $(seq 50); do
-      busctl --user get-property org.freedesktop.secrets \
-        /org/freedesktop/secrets/collection/login \
-        org.freedesktop.Secret.Collection Locked > /dev/null 2>&1 && break
+      owner="$(busctl --user call org.freedesktop.DBus /org/freedesktop/DBus \
+        org.freedesktop.DBus GetConnectionUnixProcessID s org.freedesktop.secrets \
+        2>/dev/null | cut -d' ' -f2)"
+      [ -n "$owner" ] && break
       sleep 0.1
     done
+
+    # Someone else's daemon won the name before ours claimed it: kill the
+    # impostor and restart ourselves onto the now-empty name. Restarting from
+    # inside our own ExecStartPost (backgrounded, detached) rather than looping
+    # here - once MainPID is gone this process is going down with it anyway.
+    if [ -n "$owner" ] && [ "$owner" != "$us" ]; then
+      kill -9 "$owner" 2>/dev/null || true
+      systemctl --user restart gnome-keyring-autounlock.service &
+      disown
+      exit 0
+    fi
 
     # Re-stored on every start: gnome-keyring deletes the entry again if the
     # password turns out to be wrong for that keyring (and then prompts), so a
@@ -94,9 +115,13 @@ in
       # --unlock cannot reach it once its control socket is gone.
       pkill -u "$USER" -f gnome-keyring-daemon || true
 
-      # gnome-keyring reads stdin verbatim, newline included - $() strips it
-      printf %s "$(cat "$PW_FILE")" | \
-        exec /run/wrappers/bin/gnome-keyring-daemon --foreground --unlock
+      # gnome-keyring reads stdin verbatim, newline included - $() strips it.
+      # Feed it via process substitution, not a pipe: `cmd | exec cmd2` forks
+      # cmd2 into a subshell instead of replacing this process, so systemd's
+      # MainPID would end up pointing at this script, not the real daemon -
+      # ExecStartPost's rival-detection below compares against MainPID.
+      PW="$(cat "$PW_FILE")"
+      exec /run/wrappers/bin/gnome-keyring-daemon --foreground --unlock < <(printf %s "$PW")
     '';
   };
 }

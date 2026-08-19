@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   isLinux,
   ...
 }:
@@ -28,7 +27,6 @@
             stdenv.cc.cc.lib
             nss
             libclang.lib
-            config.boot.kernelPackages.nvidia_x11.lib32
 
             # bevy
             alsa-lib-with-plugins

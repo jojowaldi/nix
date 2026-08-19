@@ -3,20 +3,14 @@
 
   nixConfig = {
     extra-substituters = [
-      "https://cache.garnix.io"
       "https://nix-community.cachix.org"
-      "https://nix-citizen.cachix.org"
       "https://projects.cache.profidev.io"
+      "http://192.168.178.22:80"
       "https://hyprland.cachix.org"
       "https://vicinae.cachix.org"
     ];
     extra-trusted-public-keys = [
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="
-      "profidev.cachix.org:tg4xEn64UMdvA5jJYT8omo/CQHk8+spLyeGT2YAku70="
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
       "profidev.cachix.org:tg4xEn64UMdvA5jJYT8omo/CQHk8+spLyeGT2YAku70="
     ];
     connect-timeout = 5;
@@ -30,6 +24,7 @@
     custom-nixpkgs.url = "github:ProfiiDev/custom-nixpkgs";
 
     proton.url = "github:profiidev/proton/latest";
+    positron.url = "github:profiidev/positron/latest";
     hibernation.url = "github:profiidev/hibernation/latest";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-secrets.url = "git+ssh://git@github.com/jojowaldi/nix-secretes.git?ref=main&shallow=1";
@@ -47,7 +42,7 @@
     };
 
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v1.0.0";
+      url = "github:nix-community/lanzaboote/v1.1.0";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
@@ -59,11 +54,6 @@
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    keyring-unlocker-src = {
-      url = "github:recolic/gnome-keyring-yubikey-unlock";
-      flake = false;
     };
 
     nix-citizen = {
@@ -89,16 +79,6 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-
-    yazi-plugins = {
-      url = "github:yazi-rs/plugins";
-      flake = false;
-    };
-
-    yazi-starship = {
-      url = "github:Rolv-Apneseth/starship.yazi";
-      flake = false;
-    };
   };
 
   outputs =
@@ -120,6 +100,8 @@
       };
     in
     {
+      modules = import ./modules { lib = nixpkgs-unstable.lib; };
+
       nixosConfigurations = builtins.listToAttrs (
         map (host: {
           name = host;
@@ -128,9 +110,9 @@
               inherit host;
               isLinux = true;
             };
-            modules = [ ./hosts/profiles/${host} ];
+            modules = [ ./hosts/linux/${host} ];
           };
-        }) (nixpkgs-unstable.lib.attrNames (builtins.readDir ./hosts/profiles))
+        }) (nixpkgs-unstable.lib.attrNames (builtins.readDir ./hosts/linux))
       );
 
       # https://nix-darwin.github.io/nix-darwin/manual/index.html

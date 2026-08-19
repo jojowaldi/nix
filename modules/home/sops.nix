@@ -2,7 +2,6 @@
   inputs,
   hostSpec,
   config,
-  lib,
   ...
 }:
 
@@ -63,5 +62,4 @@ in
         }) generalKeys
       );
   };
-
 }

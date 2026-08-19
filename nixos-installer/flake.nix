@@ -30,7 +30,7 @@
           specialArgs = minimalSpecialArgs;
           modules = [
             ./minimal-configuration.nix
-            ../hosts/profiles/${name}/hardware-config.nix
+            ../hosts/linux/${name}/hardware-config.nix
 
             { networking.hostName = name; }
           ];

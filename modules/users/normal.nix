@@ -3,9 +3,9 @@
   config,
   inputs,
   pkgs,
-  pkgsStable,
   pkgsUnstableNoCuda,
   isLinux,
+  self,
   ...
 }:
 
@@ -84,9 +84,9 @@ in
       inherit
         pkgs
         inputs
-        pkgsStable
         pkgsUnstableNoCuda
         isLinux
+        self
         ;
       hostSpec = config.hostSpec;
     };

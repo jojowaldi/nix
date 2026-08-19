@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_7_0;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   services.logind.settings.Login = {
     HandleLidSwitch = "hibernate";

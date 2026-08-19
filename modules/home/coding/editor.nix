@@ -63,6 +63,6 @@ in
   home.packages = with pkgs; [
     cursor-cli
     code-cursor
-    claude-code
+    #claude-code
   ];
 }

@@ -12,9 +12,10 @@
       if isLinux then
         [
 
-          android-studio
+          #android-studio
           code-cursor
           cursor-cli
+          #antigravity
         ]
       else
         [ ]

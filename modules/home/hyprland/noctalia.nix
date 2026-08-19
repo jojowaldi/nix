@@ -52,7 +52,6 @@
   sops.templates."noctalia-settings" = {
     content = ''
       [plugin_settings."pozzoo/hassio"]
-      ha_token = "${config.sops.placeholder.ha_token}"
     '';
 
     path = "${config.home.homeDirectory}/.config/noctalia/settings.toml";

@@ -23,7 +23,7 @@
     "sr_mod"
     "usb_storage"
   ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [
     "kvm-amd"
     "ec-sys"

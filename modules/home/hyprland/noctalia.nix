@@ -7,9 +7,6 @@
 }:
 
 {
-  imports = [
-    inputs.custom-nixpkgs.noctalia.homeModules.default
-  ];
 
   home.packages = with pkgs; [
     adw-gtk3

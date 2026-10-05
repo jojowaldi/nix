@@ -3,6 +3,7 @@
   config,
   inputs,
   isLinux,
+  lib,
   ...
 }:
 
@@ -68,7 +69,6 @@ in
       "https://cache.nixos.org"
       "https://nix-community.cachix.org"
       "https://projects.cache.profidev.io"
-      "http://192.168.178.22:80"
       "https://hyprland.cachix.org"
     ];
     trusted-public-keys = [
@@ -94,6 +94,41 @@ in
     overlays = [
       inputs.rust-overlay.overlays.default
       inputs.custom-nixpkgs.overlays.default
-    ];
+    ]
+    ++ (lib.optionals isLinux [
+      (final: prev:
+        let
+          numen = inputs.custom-nixpkgs.vicinae.inputs.numen.packages.${final.stdenv.hostPlatform.system}.numen.override {
+            stdenv = final.gcc15Stdenv;
+            withRepl = false;
+          };
+          vicinae = final.callPackage "${inputs.custom-nixpkgs.vicinae}/nix/vicinae.nix" {
+            gcc15Stdenv = final.gcc15Stdenv;
+            inherit numen;
+          };
+          soulver = inputs.custom-nixpkgs.vicinae.inputs.soulver-cpp.packages.${final.stdenv.hostPlatform.system}.default or null;
+        in
+        {
+          inherit vicinae;
+          vicinae-with-soulver =
+            if soulver != null then
+              final.symlinkJoin {
+                name = "${vicinae.name}-with-soulver";
+                paths = [ vicinae ];
+                nativeBuildInputs = [ final.makeWrapper ];
+                postBuild = ''
+                  for bin in $out/bin/*; do
+                    wrapProgram "$bin" \
+                      --prefix LD_LIBRARY_PATH : ${soulver}/lib \
+                      --prefix XDG_DATA_DIRS : ${soulver}/share
+                  done
+                '';
+                inherit (vicinae) meta;
+              }
+            else
+              vicinae;
+        }
+      )
+    ]);
   };
 }

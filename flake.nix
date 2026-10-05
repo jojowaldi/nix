@@ -5,7 +5,6 @@
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://projects.cache.profidev.io"
-      "http://192.168.178.22:80"
       "https://hyprland.cachix.org"
       "https://vicinae.cachix.org"
     ];
@@ -21,7 +20,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    custom-nixpkgs.url = "github:ProfiiDev/custom-nixpkgs";
+    custom-nixpkgs = {
+      url = "github:ProfiiDev/custom-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     proton.url = "github:profiidev/proton/latest";
     positron.url = "github:profiidev/positron/latest";

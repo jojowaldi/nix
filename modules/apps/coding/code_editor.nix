@@ -16,6 +16,7 @@
           code-cursor
           cursor-cli
           #antigravity
+          antigravity-cli       
         ]
       else
         [ ]

@@ -30,5 +30,7 @@ in
     kustomize
     helm-ls
     minikube
+    tilt
+    kind
   ];
 }

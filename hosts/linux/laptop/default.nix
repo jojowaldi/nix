@@ -11,7 +11,7 @@
     ../../spec.nix
 
     services.core.power
-    services.gui.igpu
+    #services.gui.igpu
     services.media.miracast
     services.network.cloudflare
 

@@ -14,6 +14,7 @@
     #services.gui.igpu
     services.media.miracast
     services.network.cloudflare
+    apps.creative."3d"
 
     ../../profiles/general.nix
     ../../profiles/system.nix

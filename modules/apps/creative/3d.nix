@@ -2,7 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    blender
-    blockbench
+    #asublender
+    #blockbench
+    webots
   ];
 }

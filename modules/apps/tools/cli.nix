@@ -60,6 +60,7 @@
       fish
       inputs.hibernation.packages.${stdenv.hostPlatform.system}.default
       socat
+      asusctl
     ]
     ++ (
       if isLinux then
